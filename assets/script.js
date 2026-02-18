@@ -60,6 +60,7 @@ let card=""
 //tutto questo ci fa generare le card per ogni singolo elemento senza usare html
 for (let i = 0; i < teamMembers.length; i++) {
   const singleMember = teamMembers[i];
+  /*
   const{name,role,email,img}=singleMember
   console.log(singleMember);
   const markup=`
@@ -74,8 +75,11 @@ for (let i = 0; i < teamMembers.length; i++) {
     </div>
   </div>
   `
-
   console.log(markup);
+  */
+
+  const markup=rendeMemberCard(singleMember)
+
   
   card += markup
 
@@ -83,3 +87,22 @@ for (let i = 0; i < teamMembers.length; i++) {
 
 console.log(card);
 rowEl.innerHTML = card
+
+
+function rendeMemberCard(singleMember){
+  const{name,role,email,img}=singleMember
+  console.log(singleMember);
+  const markup=`
+  <div class="col-4 p-3">
+    <div class="card overflow-hidden">
+    <div class="card-body d-flex">
+        <img class="p-2 card-img-top" src="./assets/${img}" alt="">
+        <h2 class="p-2 card-title">${name}</h2>
+        <div class="p-2 role fs-3">${role}</div>
+        <div class="p-2 email fs-3 text-primary">${email}</div>
+      </div>
+    </div>
+  </div>
+  `
+  return markup
+}
