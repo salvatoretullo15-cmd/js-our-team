@@ -52,7 +52,7 @@ const teamMembers = [
   </div>
 </div>
 */
-const rowEl=document.querySelector("section.team .col")
+const rowEl=document.querySelector("section.team .row")
 //questo rendera il team in pagina 
 //creare la variabile d'appogio
 let card=""
@@ -63,17 +63,15 @@ for (let i = 0; i < teamMembers.length; i++) {
   const{name,role,email,img}=singleMember
   console.log(singleMember);
   const markup=`
-  <div class="row">
-  <div class="col-3 p-3">
-    <div class="card p-3">
-    <div class="card-body text-center">
-        <img class="card-img-top" src="./assets/${img}" alt="">
-        <h2 class="card-title">${name}</h2>
-        <div class="role fs-3">${role}</div>
-        <div class="email fs-3 text-primary">${email}</div>
+  <div class="col-4 p-3">
+    <div class="card overflow-hidden">
+    <div class="card-body d-flex">
+        <img class="p-2 card-img-top" src="./assets/${img}" alt="">
+        <h2 class="p-2 card-title">${name}</h2>
+        <div class="p-2 role fs-3">${role}</div>
+        <div class="p-2 email fs-3 text-primary">${email}</div>
       </div>
     </div>
-  </div>
   </div>
   `
 
