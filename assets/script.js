@@ -53,6 +53,11 @@ const teamMembers = [
 </div>
 */
 const rowEl=document.querySelector("section.team .row")
+const formEl=document.getElementById("add_member")
+const nameEl=document.getElementById("name")
+const roleEl=document.getElementById("role")
+const emailEl=document.getElementById("email")
+const imageEl=document.getElementById("image")
 //questo rendera il team in pagina 
 //creare la variabile d'appogio
 let card=""
@@ -93,9 +98,9 @@ function rendeMemberCard(singleMember){
   const{name,role,email,img}=singleMember
   console.log(singleMember);
   const markup=`
-  <div class="col-4 p-3">
+  <div class="col-md-6 col-lg-4 p-3">
     <div class="card overflow-hidden">
-    <div class="card-body d-flex">
+    <div class="card-body ">
         <img class="p-2 card-img-top" src="./assets/${img}" alt="">
         <h2 class="p-2 card-title">${name}</h2>
         <div class="p-2 role fs-3">${role}</div>
@@ -106,3 +111,27 @@ function rendeMemberCard(singleMember){
   `
   return markup
 }
+
+
+formEl.addEventListener("submit",function (e) {
+  //previene la ricarica della pagina 
+  e.preventDefault
+  //select the form node 
+  console.log(nameEl,roleEl,imageEl,email.EL);
+  //read the input value
+  console.log(nameEl.value,roleEl.value,imageEl.value,emailEl.value);
+  //store each input value in a variable
+  const name=nameEl.value
+  const role=roleEl.value
+  const email=emailEl.value
+  const image=imageEl.value
+  //create a new team object using above variable
+  const newTeamMember={
+    name,role,email,image
+  }
+  console.log=(newTeamMember)
+  //add the object to the arrey(push)
+  teamMembers.push(newTeamMember)
+  //update the dom and re-render the team member
+  rendeMemberCard(teamMembers,rowEl)
+})

@@ -32,6 +32,71 @@
             </div>
         </header>
         <main>
+            <section class="add.member">
+                <div class="container">
+                    <form id="add_member">
+                        <div class="col-12">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">name</label>
+                                <input type="text"
+                                       name="name"
+                                       id="name"
+                                       class="form-control"
+                                       placeholder="scrivi qui il tuo nome"
+                                       aria-describedby="nameHelper"
+                                />
+                                <small id="nameHelper" class="form-text text-muted">
+                                    scrivi qui sopra il tuo nome
+                                </small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="role" class="form-label">role</label>
+                                <input type="text"
+                                       name="role"
+                                       id="role"
+                                       class="form-control"
+                                       placeholder="scrivi qui il tuo ruolo"
+                                       aria-describedby="roleHelper"
+                                />
+                                <small id="roleHelper" class="form-text text-muted">
+                                    scrivi qui sopra il tuo ruolo
+                                </small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">email</label>
+                                <input type="text"
+                                       name="email"
+                                       id="email"
+                                       class="form-control"
+                                       placeholder="scrivi qui la tua email"
+                                       aria-describedby="emailHelper"
+                                />
+                                <small id="emailHelper" class="form-text text-muted">
+                                    scrivi qui sopra la tua email
+                                </small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="image" class="form-label">image</label>
+                                <input type="link"
+                                       name="image"
+                                       id="image"
+                                       class="form-control"
+                                       placeholder="carica qui la tua foto (https://)"
+                                       aria-describedby="imageHelper"
+                                />
+                                <small id="imageHelper" class="form-text text-muted">
+                                    carica qui sopra la tua foto
+                                </small>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                add
+                            </button>
+
+                        </div>
+                    </form>
+                </div>
+            </section>
             <section class="team">
                 <div>
                     <div class="row">
